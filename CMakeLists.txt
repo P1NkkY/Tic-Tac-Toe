@@ -16,12 +16,20 @@ add_executable(${PROJECT_NAME}
     Game.h
     consts.h
     SplashState.h
+    MainMenuState.h
+    GameState.h
+    PauseState.h
+    GameOverState.h
 
     StateMachine.cpp
     AssetManager.cpp
     InputManager.cpp
     Game.cpp
     SplashState.cpp
+    MainMenuState.cpp
+    GameState.cpp
+    PauseState.cpp
+    GameOverState.cpp
     main.cpp
 )
 

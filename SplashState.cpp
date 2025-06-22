@@ -5,6 +5,8 @@
 #include <iostream>
 #include <sstream>
 
+#include "MainMenuState.h"
+
 SplashState::SplashState(GameDataRef data) : m_data(data) {}
 
 void SplashState::Init() {
@@ -26,7 +28,8 @@ void SplashState::HandleInput() {
 
 void SplashState::Update(float dt) {
     if (m_clock.getElapsedTime().asSeconds() > SPLASH_STATE_SHOT_TIME) {
-        // Switch to the Main Menu
+        m_data.get()->machine.AddState(StateRef(new MainMenuState(m_data)),
+                                       true);
     }
 }
 
